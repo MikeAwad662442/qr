@@ -1,7 +1,9 @@
 {
   "name": "qr",
   "version": "0.1.0",
+   "author": "Mike Awad",
   "private": true,
+   "keywords": [ "Next.Js", "QR", "SQLite", "TypeScript", "tailwindcss" ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
