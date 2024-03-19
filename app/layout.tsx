@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Header, SideBar } from "@/components";
-// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "QR code Generator",
@@ -16,7 +14,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <body className={inter.className}> */}
       <body className="m-2">
         <SideBar />
         <main className="flex flex-col md:ml-60 sm:border-r sm:border-zinc-700 min-h-screen ml-2">

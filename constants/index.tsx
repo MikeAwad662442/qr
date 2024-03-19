@@ -16,17 +16,17 @@ export const NavLinks: NavLinkType[] = [
         // icon: <IoHome className='text-red' />
         icon: <IoHome />
     }, {
-        path: '/wifi',
+        path: '/wifi-page',
         title: 'Wifi',
         // icon:'./assets/icons/wifi.svg'
         icon: <IoIosWifi />
     }, {
-        path: '/vcard',
+        path: '/vcard-page',
         title: 'Vcard',
         // icon:'./assets/icons/vcard.svg'
         icon: <FaRegAddressCard />
     }, {
-        path: '/',
+        path: '/url-page',
         title: 'URL Link',
         // icon: './assets/icons/qr-code.svg'
         icon: <ImQrcode />

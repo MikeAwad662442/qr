@@ -7,7 +7,13 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 } */
-
+/* add New Font to the Project */
+@font-face {
+  font-family: "Miza";
+  src:
+    local(""),
+    url("./../public/assets/Mirza-Regular.ttf") format("TrueType") ;
+}
 /* Dark Mode */
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -31,6 +37,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    font-family: 'Miza';
 }
 
 @layer utilities {
