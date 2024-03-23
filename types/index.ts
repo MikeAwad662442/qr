@@ -5,3 +5,8 @@ export interface NavLinkType{
     submenu?: boolean,
     subMenuItems?: NavLinkType[],
 }
+
+export interface UserType{
+    userName: string,
+    password: string
+}

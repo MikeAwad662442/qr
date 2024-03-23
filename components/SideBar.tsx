@@ -7,8 +7,8 @@ import { IconContext } from "react-icons";
 
 const SideBar = () => {
     return (
-        <nav className="md:w-60 bg-gray=950 h-screen flex-1 flex-col fixed border-r border-zinc-900 hidden md:flex">
-            <div className="flex flex-row justify-between">
+        <nav className="md:w-60 bg-gray=950 h-screen flex-1 flex-col fixed border-r border-zinc-600 pl-2 pr-4 hidden md:flex">
+            <div className="flex flex-row justify-between mb-2">
                 <Image
                     className="rounded-full"
                     src="/assets/logo-80x80.png"
