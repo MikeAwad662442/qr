@@ -1,11 +1,10 @@
 import { Login } from "@/components";
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
-      <Login />
+    <main>
+      {/* <Login /> // stop Using for now */}
       <section>Home Page</section>
-    </>
+    </main>
   );
 }

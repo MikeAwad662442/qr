@@ -10,3 +10,8 @@ export interface UserType{
     userName: string,
     password: string
 }
+
+export interface QRcodeType{
+    data: string,
+    images: any
+}
