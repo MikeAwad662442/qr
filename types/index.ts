@@ -13,5 +13,6 @@ export interface UserType{
 
 export interface QRcodeType{
     data: string,
+    setData:any,
     images: any
 }
