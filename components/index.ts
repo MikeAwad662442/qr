@@ -4,7 +4,7 @@ import Footer from "./Footer"
 import SideBar from "./SideBar"
 import Login from "./Login"
 import CanvasUrl from "./CanvasUrl"
-import FileUpload from "./FileUpload"
+// import FileUpload from "./FormField"
 
 export {
     Header,
@@ -12,5 +12,5 @@ export {
     SideBar,
     Login,
     CanvasUrl,
-    FileUpload
+    // FileUpload
 }
