@@ -3,7 +3,6 @@ import { NavLinks } from "@/constants"
 import { NavLinkType } from "@/types"
 import Image from "next/image"
 import Link from "next/link"
-import { IconContext } from "react-icons";
 
 const SideBar = () => {
     return (

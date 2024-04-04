@@ -1,58 +1,41 @@
+import { FieldProps } from 'formik'
 import React, { ChangeEvent, FC, useRef } from 'react'
-//
 
-const InputFiled: FC = () => {
+
+// Type of Field Text Password
+const InputField: FC<FieldProps<any> & {}> = ({ field, form, ...props }) => {
     return (
-        <></>
-    )
-}
+        <input {...field} {...props} />
+    );
+};
+// Type of Field Upload Image || Video
+const UploadField: FC<FieldProps<any> & {}> = ({ field, form, ...props }) => {
+    // TypeScript useRef <HTMLInputElement | null> in this way he understand the it can be null
 
-const UploadFiled: FC = () => {
-    // // === to get Filses Info === //
-    // let imageSrc: any; // './assets/icon/favicon.png';
-    // let fileType!: string;
-    // let file!: File;
-    // // === to get Filses Info === //
-    // const fileInputRef = useRef<HTMLInputElement | null>(null);
-    // // === Get / Images || Videos / From UpLodFile === //
-    // const onFileChange = async (event: ChangeEvent<HTMLInputElement | any>) => {
 
-    //     file = event.target.files[0]; // === to get File info in Angular
-    //     const reader = new FileReader();
-    //     // === it must to be IMAGE === //
-    //     if (file) {
-    //         reader.readAsDataURL(file);
-    //         if (file.type.indexOf('image') > -1) {
-    //             fileType = 'image';
-    //             reader.onload = (e) => (imageSrc = reader.result);
-    //         } else {
-
-    //         }
-    //     }
-    // }
-    // // === Get / Images || Videos / From UpLodFile === //
-    // const handleButtonClick = () => {
-    //     if (fileInputRef.current) {
-    //         fileInputRef.current.click(); // Trigger the file input dialog
-    //     }
-    // };
     return (
         <div>
-            <p>Hi Mike</p>
-            {/* <input
-                name="image"
-                type="file"
-                onChange={onFileChange}
-                required
-                ref={fileInputRef}
+            <input
                 className='hidden'
+                id="files"
+                name="files"
+                type='file'
+                onChange={(e) => {
+                    // setFieldValue('')
+                }}
+                {...props}
             />
-            <button onClick={handleButtonClick}>Upload Image</button> */}
+            {/* fileRef.current?.click() We use a sign? Because the value at the beginning is null
+            <button onClick={() => { fileRef.current?.click() }}>
+                {field.name}<MdFileUpload />
+            </button> */}
         </div>
-    )
-}
 
-export { UploadFiled, InputFiled }
+    );
+};
+
+
+export { UploadField, InputField }
 
 
 /**********************

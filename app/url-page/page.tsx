@@ -1,13 +1,15 @@
 // Generate QR for url
 "use client";
-import { Formik, Form, Field, useFormikContext, FastField } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { CanvasUrl } from '@/components';
 import * as Yup from 'yup';
-
+import { InputField, UploadField } from '@/components/FormField';
+import { MdFileUpload } from "react-icons/md";
+import { useRef } from 'react';
 const UrlPage = () => {
     const url = "https://www.google.com";
     const image: any = '/assets/logo-80x80.png';
-
+    const fileRef = useRef<HTMLInputElement | null>(null)
     return (
         <section className='flex justify-center gap-x-8 mt-6'>
             <Formik
@@ -23,13 +25,16 @@ const UrlPage = () => {
                     alert(JSON.stringify(values, null, 2));
                 }}
             >
-                {({ isValid, dirty, handleChange, values }) => ( // To enter special values that are not directly used 
+                {({ isValid, dirty, setFieldValue, handleChange, values }) => ( // To enter special values that are not directly used 
                     <Form className='flex flex-col bg-red-800 text-slate-250 gap-y-2'>
+                        {/* View VALUES INPUT */}
                         <p className='text-red'>{values.formUrl}</p>
                         <div className='flex flex-col m-5'>
                             <h1>URL QR-code Generate</h1>
                             <CanvasUrl data={url} setData={values.formUrl} images={image} />
                         </div>
+                        {/* View VALUES INPUT */}
+                        {/* start forms filed */}
                         <label htmlFor="formUrl">URL Address</label>
                         <Field
                             id="formUrl"
@@ -37,15 +42,21 @@ const UrlPage = () => {
                             type='text'
                             onChange={handleChange}
                             placeholder="URL"
+                            components={InputField}
                         />
                         <label htmlFor='files'>Upload Images</label>
                         <Field
+                            ref={fileRef}
                             id="files"
                             name="files"
-                            as="file"
-                            onChange={handleChange}
+                            type='file'
+                            onChange={setFieldValue}
+                            components={UploadField}
                         />
-
+                        {/* fileRef.current?.click() We use a sign? Because the value at the beginning is null */}
+                        <button onClick={() => { fileRef.current?.click() }}>
+                            files<MdFileUpload />
+                        </button>
                         <button type="submit" disabled={!isValid || !dirty} >Submit</button>
                     </Form>
                 )}
