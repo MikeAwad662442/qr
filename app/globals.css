@@ -1,25 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* Light Mode */
-/* :root {
+:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-} */
+}
+
 /* add New Font to the Project */
 @font-face {
   font-family: "Miza";
   src:
     local(""),
-    url("./../public/assets/Mirza-Regular.ttf") format("TrueType") ;
+    url("./../public/assets/Mirza-Regular.ttf") format("TrueType");
 }
-/* Dark Mode */
+
+/* Dark Mode
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-  }
+  } */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -31,17 +34,30 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-    font-family: 'Miza';
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  font-family: 'Miza';
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer components {
+  .FormControl {
+    @apply flex flex-col m-1 w-full gap-2
+  }
+
+  .Input {
+    @apply p-3 text-slate-900
+  }
+
+}
+
+/*  hidden Input Type File */
+.file-input {
+  display: none;
 }
